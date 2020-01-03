@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://kit.fontawesome.com/efca709025.js" crossorigin="anonymous"></script><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com/css?family=Cantarell:700&display=swap" rel="stylesheet"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Love Calculator</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: 'Cantarell', sans-serif;
+		}
+		body{
+			background: url("HD-Love-Wallpaper.jpg");
+			background-size: cover;
+		}
+		.container{
+			height: 450px;
+			background: linear-gradient(45deg, #00FF4C, gold);
+			width: 90%;
+			margin: auto;
+			text-align: center;
+			margin-top: 20px;
+			border-radius: 20px;
+		}
+		#boy, #girl{
+			width: 40%;
+			border-radius: 30px;
+			outline: none;
+			border: 2px solid darkorange;
+			padding: 10px;
+			margin-top: 30px;
+			transition: 0.2s ease;
+		}
+		#boy:focus, #girl:focus{
+			border: 2px solid red;
+		}
+		input[type="submit"]
+		{
+			width: 25%;
+			padding: 10px 0px;
+			border-radius: 30px;
+			outline: none;
+			border: none;
+			cursor: pointer;
+			background: red;
+			transition: 0.4s ease;
+			font-size: 1.1rem;	
+			color: white;
+			margin-top: 30px;
+		}
+		input[type="submit"]:hover{
+			background: white;
+			color: red;
+			border: 2px solid red;
+		}
+		#results p{
+			font-size: 30px;
+			margin-top: 40px;
+			text-shadow: 0px 2px 2px red;
+		     	
+		}
+		@media only screen and (max-width: 600px)
+		{
+			#boy, #girl{
+				width: 70%;
+			}
+			input[type="submit"]{
+				width: 50%;
+				font-size: 1rem;
+		}
+	}
+	h1{
+		background: linear-gradient(78deg, darkred, blue);
+		padding: 10px 0px;
+		font-size: 2rem;
+		color: white;
+		border-radius: 20px 20px 0px 0px;
+	}
+	</style>
+</head>
+<body>
+<div class="container">
+	<h1>Love Calculator</h1>
+	<form onsubmit="calculate(); return false;">
+		<i class="fas fa-male" style="color: #7900AB; font-size: 25px;position: relative;top: 5px;"></i>&nbsp; <input type="text" placeholder="Your name" id="boy" required> <br>
+		<i class="fas fa-female" style="color: #FF0000; font-size: 25px;position: relative;top: 5px;"></i>&nbsp; <input type="text" placeholder="Your Partner's name" id="girl" required>
+		<br>
+		<input type="submit" value="Calculate Love">
+	</form>
+
+	<div id="results">
+		
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+	function calculate()
+	{
+		var boy = document.getElementById("boy").value;
+		var girl = document.getElementById("girl").value;
+
+		if(
+		(boy.toLowerCase()=="sonu" || boy.toLowerCase()=="sourakanti mandal" || boy.toLowerCase()=="soura" || boy.toLowerCase()=="sourakanti")
+		 && 
+		(girl.toLowerCase()=="eshu" || girl.toLowerCase()=="eshita rakshit" || girl.toLowerCase()=="eshita" || girl.toLowerCase()=="eshi")
+		)
+		{
+			var love = 100;
+		}
+		else if(
+		(boy.toLowerCase()=="kankan" || boy.toLowerCase()=="kankan chatterjee")
+		 && 
+		(girl.toLowerCase()=="papri" || girl.toLowerCase()=="papri sam" || girl.toLowerCase()=="hirimba")
+		)
+		{
+			love = 100;
+		}
+		else
+		{
+			love = Math.floor(Math.random() * 10) + 60; 
+		}
+		love += "";
+		love += "%";
+
+		document.getElementById("results").innerHTML =
+		  "<p><i class='fas fa-heart' style='color: red; font-size: 50px;'></i>&nbsp; "+love+
+		  "&nbsp; <i class='fas fa-heart' style='color: red; font-size: 50px;'></i></p>";
+		
+	}
+</script>
+</html>
